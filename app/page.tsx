@@ -7,7 +7,7 @@ export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const handleLogin = () => {
-    window.location.href = "http://127.0.0.1:8000/auth/github";
+    window.location.href = "https://auto-doc-latest.onrender.com/auth/github";
   };
 
   useEffect(() => {

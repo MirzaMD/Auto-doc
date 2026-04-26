@@ -341,7 +341,7 @@ export default function Dashboard() {
         setHistoryLoading(false);
         return;
       }
-      const res = await axios.get("http://127.0.0.1:8000/history/", {
+      const res = await axios.get("https://auto-doc-latest.onrender.com/history/", {
         headers: { Authorization: `Bearer ${token}` },
         timeout: 10000,
       });
@@ -439,7 +439,7 @@ export default function Dashboard() {
         setReposLoading(true);
         const token = localStorage.getItem("token") || localStorage.getItem("github_token");
         if (!token) { showToast("Authentication required", "error"); return; }
-        const res = await axios.get("http://127.0.0.1:8000/repo/list", {
+        const res = await axios.get("https://auto-doc-latest.onrender.com/repo/list", {
           headers: { Authorization: `Bearer ${token}` },
           signal: controller.signal,
           timeout: 10000,
@@ -482,7 +482,7 @@ export default function Dashboard() {
       }, 900);
 
       const res = await axios.post<PreviewData>(
-        `http://127.0.0.1:8000/pr/preview`,
+        `https://auto-doc-latest.onrender.com/pr/preview`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -508,7 +508,7 @@ export default function Dashboard() {
       setLoading(true);
       const token = localStorage.getItem("token") || localStorage.getItem("github_token");
       await axios.post(
-        `http://127.0.0.1:8000/pr/accept`,
+        `https://auto-doc-latest.onrender.com/pr/accept`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
