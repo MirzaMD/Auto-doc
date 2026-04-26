@@ -341,7 +341,8 @@ export default function Dashboard() {
         setHistoryLoading(false);
         return;
       }
-      const res = await axios.get("https://auto-doc-latest.onrender.com/history/", {
+      const res = await axios.get("https://auto-doc-latest.onrender.com/history/", 
+        {                      
         headers: { Authorization: `Bearer ${token}` },
         timeout: 10000,
       });
